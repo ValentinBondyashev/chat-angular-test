@@ -1,0 +1,38 @@
+<section class="main-block">
+  <div class="nav-block">
+    <div (click)="changeNavElement('chats')" class="nav-button"
+         [ngClass]="{'nav-button nav-button-active': navElement === 'chats', 'nav-button': true}">
+      <i class="material-icons">
+        chat
+      </i>
+      <p translate>Chats</p>
+    </div>
+    <div (click)="changeNavElement('calls')" class="nav-button"
+         [ngClass]="{'nav-button nav-button-active': navElement === 'calls', 'nav-button': true}">
+      <i class="material-icons">
+        call
+      </i>
+      <p translate>Calls</p>
+    </div>
+    <div (click)="changeNavElement('contacts')" class="nav-button"
+         [ngClass]="{'nav-button nav-button-active': navElement === 'contacts', 'nav-button': true}">
+      <i class="material-icons">
+        perm_contact_calendar
+      </i>
+      <p translate>Contacts</p>
+    </div>
+    <div (click)="changeNavElement('notifications')" class="nav-button"
+         [ngClass]="{'nav-button nav-button-active': navElement === 'notifications', 'nav-button': true}">
+      <i class="material-icons">
+        notifications
+      </i>
+      <p translate>Notifications</p>
+    </div>
+  </div>
+  <ng-container [ngSwitch]="navElement">
+    <app-chats *ngSwitchCase="'chats'"></app-chats>
+    <app-calls *ngSwitchCase="'calls'">Calls</app-calls>
+    <app-contacts *ngSwitchCase="'contacts'">Contacts</app-contacts>
+    <app-notifications *ngSwitchCase="'notifications'">Notifications</app-notifications>
+  </ng-container>
+</section>

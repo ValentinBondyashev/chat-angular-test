@@ -1,0 +1,11 @@
+<section>
+  <div class="chats-block">
+    <div *ngFor="let chat of chats" class="chat-block">
+      <ng-container>
+        <app-avatar [userInfo]="chat.user"></app-avatar>
+        <p>{{chat.user.first_name}}{{chat.user.last_name}}</p>
+      </ng-container>
+
+    </div>
+  </div>
+</section>

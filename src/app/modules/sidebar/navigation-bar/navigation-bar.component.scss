@@ -1,0 +1,25 @@
+.nav-block {
+  height: 80px;
+  display: flex;
+  border-bottom: 2px solid var(--border);
+  justify-content: space-around;
+  p {
+    font-size: 10px;
+  }
+}
+
+.nav-button {
+  width: 25%;
+  color: var(--first-font-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &-active {
+    color: var(--active-button);
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,10 @@
+<div class="avatar-block">
+  <div [class]="renderStatus()" *ngIf="renderStatus()" [matMenuTriggerFor]="menu"></div>
+  <mat-menu #menu="matMenu" >
+    <button mat-menu-item translate>Active</button>
+    <button mat-menu-item translate>Away</button>
+    <button mat-menu-item translate>Do-not-disturb</button>
+    <button mat-menu-item translate>Invisible</button>
+  </mat-menu>
+  <span class="abbreviation" *ngIf="!userInfo.avatar">VB</span>
+</div>
