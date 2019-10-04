@@ -12,13 +12,13 @@
     </mat-menu>
 
     <mat-menu #themes="matMenu">
-      <button mat-menu-item (click)="themeService.setTheme('dark')" translate>Dark</button>
-      <button mat-menu-item (click)="themeService.setTheme('light')" translate>Light</button>
+      <button mat-menu-item (click)="changeTheme('dark')" translate>Dark</button>
+      <button mat-menu-item (click)="changeTheme('light')" translate>Light</button>
     </mat-menu>
 
     <mat-menu #languages="matMenu">
-      <button mat-menu-item (click)="translate.use('en')" translate>English</button>
-      <button mat-menu-item (click)="translate.use('ru')" translate>Russian</button>
+      <button mat-menu-item (click)="changeLanguage('en')" translate>English</button>
+      <button mat-menu-item (click)="changeLanguage('ru')" translate>Russian</button>
     </mat-menu>
   </div>
 </div>

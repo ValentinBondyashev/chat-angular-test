@@ -1,4 +1,5 @@
-<section class="main-block">
+<section class="main-block" *ngIf="innerWidth > 725 || open"
+         [ngClass]="{'main-block-full': open}">
   <app-user-info></app-user-info>
   <app-search-bar></app-search-bar>
   <app-navigation-bar></app-navigation-bar>

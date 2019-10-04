@@ -23,7 +23,14 @@
     ],
     "paths": {
       "@app/*": ["src/app/*"],
-      "@env/*": ["src/environments/*"]
+      "@env/*": ["src/environments/*"],
+      "@module/*": ["src/app/modules/*"],
+      "@reducer/*": ["src/app/store/reducers/*"],
+      "@action/*": ["src/app/store/actions/*"],
+      "@effect/*": ["src/app/store/effects/*"],
+      "@selector/*": ["src/app/store/selectors/*"],
+      "@state/*": ["src/app/store/state/*"],
+      "@theme/*": ["src/app/theme/*"]
     }
   },
   "angularCompilerOptions": {

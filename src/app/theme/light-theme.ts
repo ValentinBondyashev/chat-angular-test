@@ -14,6 +14,8 @@ export const lightTheme: Theme = {
     '--second-font-color': '#8e9195',
     '--border': '#d5d9de',
     '--border-status': '#f0f4f8',
-    '--active-button': '#0078d4'
+    '--active-button': '#0078d4',
+    '--button-background': '#f1f1f4',
+    '--button-background-hover': '#e0e0e3'
   }
 };

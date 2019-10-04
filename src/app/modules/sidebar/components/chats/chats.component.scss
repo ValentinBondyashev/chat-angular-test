@@ -1,0 +1,32 @@
+.chat-block {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: rgba(52, 177, 235, 0.2);
+  }
+}
+
+.user-info-block {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: var(--first-font-color);
+}
+
+.last-message {
+  font-size: 13px;
+  color: var(--second-font-color);
+}
+
+.last-message-date {
+  font-size: 10px;
+  color: var(--second-font-color);
+}

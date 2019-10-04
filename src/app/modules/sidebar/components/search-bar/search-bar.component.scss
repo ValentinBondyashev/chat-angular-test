@@ -13,6 +13,7 @@
     height: 30px;
     width: 75%;
     outline: none;
+    background: var(--second-background);
   }
   &-button {
     border: 1px solid var(--border);
@@ -22,9 +23,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ffffff;
+    background: var(--second-background);
     cursor: pointer;
     outline: none;
+    color: var(--second-font-color);
     i {
       font-size: 16px;
     }

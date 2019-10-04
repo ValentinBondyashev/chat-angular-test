@@ -14,6 +14,8 @@ export const darkTheme: Theme = {
     '--second-font-color': '#74767a',
     '--border': '#2b2c33',
     '--border-status': '#1e1e1e',
-    '--active-button': '#0078d4'
+    '--active-button': '#0078d4',
+    '--button-background': '#2b333b',
+    '--button-background-hover': '#242a31'
   }
 };

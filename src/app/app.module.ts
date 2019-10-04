@@ -12,6 +12,12 @@ import { SidebarModule } from '@app/modules/sidebar/sidebar.module';
 import { MaterialModule } from '@app/material';
 import { darkTheme, lightTheme, ThemeModule } from '@app/theme';
 import 'hammerjs';
+import { ChatModule } from '@module/chat/chat.module';
+import { appReducers } from '@reducer/index';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '@env/environment.prod';
 
 @NgModule({
   declarations: [
@@ -23,6 +29,10 @@ import 'hammerjs';
     BrowserAnimationsModule,
     SidebarModule,
     HttpClientModule,
+    ChatModule,
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([]),
+    environment.production ? StoreDevtoolsModule.instrument() : [],
     ThemeModule.forRoot({
       themes: [lightTheme, darkTheme],
       active: 'light'
