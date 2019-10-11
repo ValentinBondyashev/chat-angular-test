@@ -1,0 +1,43 @@
+.main-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100vw - 302px);
+  background: var(--second-background);
+  padding: 30px 0;
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+}
+
+.chat-input {
+  background: var(--button-background);
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  padding-left: 30px;
+  width: 50%;
+  margin-left: 10px;
+}
+
+.button-block {
+  display: flex;
+  margin-right: 10px;
+  button {
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    color: var(--second-font-color);
+    background: var(--button-background);
+    margin-left: 10px;
+    &:hover {
+      background: var(--button-background-hover);
+    }
+  }
+}

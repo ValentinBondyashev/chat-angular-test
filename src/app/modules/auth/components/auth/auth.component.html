@@ -1,0 +1,15 @@
+<section class="main-block">
+  <div class="auth-wrap">
+    <form class="login-form" [formGroup]="loginForm" (submit)="submit()">
+      <mat-form-field class="login-form-input-wrap">
+        <input required matInput [formControlName]="'username'" type="text" placeholder="Username">
+      </mat-form-field>
+      <mat-form-field class="login-form-input-wrap">
+        <input required matInput [formControlName]="'password'" type="password" placeholder="Password">
+      </mat-form-field>
+      <div class="login-btn-block">
+        <button mat-raised-button [disabled]="loginForm.invalid" color="primary">Log in</button>
+      </div>
+    </form>
+  </div>
+</section>

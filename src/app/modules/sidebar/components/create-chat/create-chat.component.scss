@@ -1,0 +1,14 @@
+.main-block {
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+
+.create-button {
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  padding: 4px 15px;
+  outline: none;
+  cursor: pointer;
+}

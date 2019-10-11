@@ -1,0 +1,12 @@
+:host{
+  overflow-y: scroll;
+}
+.main-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 130px;
+  padding-top: 90px;
+  height: max-content;
+}
+

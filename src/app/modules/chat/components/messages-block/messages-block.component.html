@@ -1,0 +1,15 @@
+<section class="main-block">
+  <ng-container *ngFor="let message of messages">
+    <div class="message-wrap">
+      <div class="avatar-block">
+        <span class="abbreviation" *ngIf="!message.user.avatar">VB</span>
+      </div>
+      <div class="message-block">
+        <p class="user-info">{{message.user.first_name + ', ' + message.created_at}}</p>
+        <div class="message">
+          {{message.text}}
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>
