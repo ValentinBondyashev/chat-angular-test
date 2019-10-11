@@ -7,7 +7,12 @@ export const environment = {
   hmr: false,
   serverUrl: 'https://localhost',
   defaultLanguage: 'en-US',
-  supportedLanguages: ['en-US', 'fr-FR']
+  supportedLanguages: ['en-US', 'fr-FR'],
+  http: {
+    api: 'http://localhost:5000',
+    user: '/user',
+    login: '/login'
+  }
 };
 
 /*

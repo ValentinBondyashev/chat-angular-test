@@ -1,0 +1,22 @@
+.contact-block {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: rgba(52, 177, 235, 0.2);
+  }
+}
+
+.contact-info-block {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.contact-name {
+  font-size: 14px;
+  color: var(--first-font-color);
+}

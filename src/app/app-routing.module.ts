@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
 const routes: Routes = [
   {
     path: '',
-    loadChildren: '@module/chat/chat.module#ChatModule'
+    loadChildren: '@module/main-page/main-page.module#MainPageModule'
+  },
+  {
+    path: 'login',
+    loadChildren: '@module/auth/auth.module#AuthModule'
   },
   {
     path: '404',

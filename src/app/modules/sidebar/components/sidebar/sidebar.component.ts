@@ -1,8 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { IAppState } from '@state/index';
+import { IAppState } from '../../../../store/state/index';
 import { select, Store } from '@ngrx/store';
-import * as sidebarAction from '@action/sidebar.actions';
-import { getSidebarState } from '@reducer/index';
+import * as sidebarAction from '../../../../store/actions/sidebar.actions';
+import { getSidebarState } from '../../../../store/reducers/index';
 
 @Component({
   selector: 'app-sidebar',

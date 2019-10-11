@@ -1,1 +1,14 @@
-<p>contacts works!</p>
+<section>
+  <div class="contacts-block">
+    <div *ngFor="let contact of contacts" class="contact-block">
+      <ng-container>
+        <app-avatar [userInfo]="contact.contact"></app-avatar>
+        <div class="contact-info-block">
+          <div>
+            <p class="contact-name">{{contact.contact.firstName + ' ' + contact.contact.lastName}}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

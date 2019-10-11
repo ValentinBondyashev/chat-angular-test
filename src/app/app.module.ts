@@ -18,10 +18,18 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@env/environment.prod';
+import { AuthModule } from '@module/auth/auth.module';
+import { AuthEffect } from '@effect/auth.effects';
+import { MainPageModule } from '@module/main-page/main-page.module';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ContactEffect } from '@effect/contact.effects';
+import { UserEffect } from '@effect/user.effects';
+
+const config: SocketIoConfig = { url: 'http://localhost:5000', options: {}};
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,12 +38,15 @@ import { environment } from '@env/environment.prod';
     SidebarModule,
     HttpClientModule,
     ChatModule,
+    AuthModule,
+    SocketIoModule.forRoot(config),
+    MainPageModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AuthEffect, ContactEffect, UserEffect]),
     environment.production ? StoreDevtoolsModule.instrument() : [],
     ThemeModule.forRoot({
       themes: [lightTheme, darkTheme],
-      active: 'light'
+      active: localStorage.getItem('theme') || 'light'
     }),
     TranslateModule.forRoot({
       loader: {

@@ -30,6 +30,7 @@
       "@effect/*": ["src/app/store/effects/*"],
       "@selector/*": ["src/app/store/selectors/*"],
       "@state/*": ["src/app/store/state/*"],
+      "@service/*": ["src/app/core/services/*"],
       "@theme/*": ["src/app/theme/*"]
     }
   },

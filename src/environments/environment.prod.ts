@@ -1,7 +1,9 @@
 export const environment = {
   production: true,
   hmr: false,
-  serverUrl: 'https://localhost',
   defaultLanguage: 'en-US',
-  supportedLanguages: ['en-US', 'fr-FR']
+  supportedLanguages: ['en-US', 'fr-FR'],
+  serverUrl: 'http://localhost:5000',
+  user: '/user',
+  contact: '/contact'
 };
