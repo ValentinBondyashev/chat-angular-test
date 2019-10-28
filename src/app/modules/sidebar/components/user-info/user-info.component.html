@@ -1,6 +1,8 @@
 <div class="main-block">
-  <app-avatar [userInfo]="{'status': 'active', avatar: false}"></app-avatar>
-  <p class="username">Valentine Bondyashev</p>
+  <div class="info-block">
+    <app-avatar [userInfo]="{'status': 'active', avatar: false}"></app-avatar>
+    <span class="username">{{userInfo.firstName + ' ' + userInfo.lastName}}</span>
+  </div>
   <div class="settings">
     <button mat-icon-button [matMenuTriggerFor]="menu" class="setting-button">
       <mat-icon>more_horiz</mat-icon>

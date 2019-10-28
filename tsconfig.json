@@ -25,6 +25,7 @@
       "@app/*": ["src/app/*"],
       "@env/*": ["src/environments/*"],
       "@module/*": ["src/app/modules/*"],
+      "@store/*": ["src/app/store/*"],
       "@reducer/*": ["src/app/store/reducers/*"],
       "@action/*": ["src/app/store/actions/*"],
       "@effect/*": ["src/app/store/effects/*"],

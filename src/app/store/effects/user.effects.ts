@@ -15,7 +15,7 @@ export class UserEffect {
   }
 
   @Effect()
-  example$: Observable<Action> = this.actions$.pipe(
+  getAllUser$: Observable<Action> = this.actions$.pipe(
     ofType(userAction.ActionTypes.GET_ALL_USERS_REQUEST),
     switchMap(() => {
       return this.http.getAllUser()
@@ -25,6 +25,22 @@ export class UserEffect {
           }),
           catchError(error =>
             observableOf(new userAction.GetAllUserFailure({error}))
+          )
+        );
+    })
+  );
+
+  @Effect()
+  getUsersWithFilter$: Observable<Action> = this.actions$.pipe(
+    ofType(userAction.ActionTypes.GET_USERS_WITH_FILTER_REQUEST),
+    switchMap((action: any) => {
+      return this.http.getUsersWithFilter(action.payload.filter)
+        .pipe(
+          map((data) => {
+            return new userAction.GetUsersWithFilterSuccess({users: data});
+          }),
+          catchError(error =>
+            observableOf(new userAction.GetAllUserWithFilterFailure({error}))
           )
         );
     })

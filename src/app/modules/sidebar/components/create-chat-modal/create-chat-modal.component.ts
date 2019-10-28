@@ -1,10 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { select, Store } from '@ngrx/store';
-import { getUserState } from '@reducer/index';
-import * as userAction from '@action/user.actions';
+import { getContactState } from '@reducer/index';
+import * as chatAction from '@action/chat.actions';
 import { IAppState } from '@state/index';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import * as contactAction from '@action/contact.actions';
 
 @Component({
   selector: 'app-create-chat-modal',
@@ -12,7 +13,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./create-chat-modal.component.scss']
 })
 export class CreateChatModalComponent implements OnInit {
-  private userState;
+  private contactState;
   users;
   newChatForm;
   subscribers;
@@ -29,9 +30,9 @@ export class CreateChatModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new userAction.GetAllUsersRequest());
-    this.userState = this.store.pipe(select((getUserState))).subscribe((data) => {
-      this.users = data.users;
+    this.store.dispatch(new contactAction.GetAllContactsById());
+    this.contactState = this.store.pipe(select((getContactState))).subscribe((data) => {
+      this.users = data.contacts;
     });
   }
 
@@ -40,7 +41,11 @@ export class CreateChatModalComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.newChatForm.value);
+    this.store.dispatch(new chatAction.AddNewChatRequest({
+        name: this.newChatForm.value.name,
+        users: this.newChatForm.value.subscribers
+      }
+    ));
   }
 
   createItem(item): FormGroup {

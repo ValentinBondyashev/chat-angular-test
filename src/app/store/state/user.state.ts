@@ -1,5 +1,5 @@
 export interface IUserState {
-  users: any;
+  users?: any;
   error?: string;
 }
 

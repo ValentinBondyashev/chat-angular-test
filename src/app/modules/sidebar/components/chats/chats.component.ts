@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import * as chatAction from '@action/chat.actions';
+import { getChatState } from '@reducer/index';
+import { select, Store } from '@ngrx/store';
+import { IAppState } from '@state/index';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chats',
@@ -6,15 +11,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chats.component.scss']
 })
 export class ChatsComponent implements OnInit {
-  chats = [{user: {status: 'active', avatar: false, first_name: 'Valentin', last_name: 'Bondyashev'}, last_message: '9/6/2019'},
-    {user: {status: 'do-not-disturb', avatar: false, first_name: 'Max', last_name: 'Lebedev'}, last_message: '9/6/2019'},
-    {user: {status: 'away', avatar: false, first_name: 'Egor', last_name: 'Hromov'}, last_message: '9/6/2019'},
-    {user: {status: 'do-not-disturb', avatar: false, first_name: 'Bogdan', last_name: 'Ostapenko'}, last_message: '9/6/2019'}];
+  private chatState;
+  chats = [];
 
-  constructor() {
+  constructor(private store: Store<IAppState>, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.store.dispatch(new chatAction.GetAllChatsRequest());
+    this.chatState = this.store.pipe(select((getChatState))).subscribe((data) => {
+      this.chats = data.chats;
+    });
   }
 
 }

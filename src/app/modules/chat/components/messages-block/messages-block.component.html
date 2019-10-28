@@ -1,12 +1,14 @@
-<section class="main-block">
+<section #scrollMe class="main-block">
   <ng-container *ngFor="let message of messages">
-    <div class="message-wrap">
+    <div [ngClass]="{'message-wrap-own': userId === message.user.id}"
+         class="message-wrap">
       <div class="avatar-block">
         <span class="abbreviation" *ngIf="!message.user.avatar">VB</span>
       </div>
       <div class="message-block">
-        <p class="user-info">{{message.user.first_name + ', ' + message.created_at}}</p>
-        <div class="message">
+        <p class="user-info">{{message.user.firstName + ', ' + message.createdAt}}</p>
+        <div class="message"
+             [ngClass]="{'message-own': userId === message.user.id}">
           {{message.text}}
         </div>
       </div>

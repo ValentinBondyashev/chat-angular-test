@@ -5,5 +5,6 @@ export const environment = {
   supportedLanguages: ['en-US', 'fr-FR'],
   serverUrl: 'http://localhost:5000',
   user: '/user',
-  contact: '/contact'
+  contact: '/contact',
+  chat: '/chat'
 };

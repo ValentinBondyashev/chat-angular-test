@@ -29,5 +29,21 @@ export class ContactEffect {
         );
     })
   );
+
+  @Effect()
+  addContacts$: Observable<Action> = this.actions$.pipe(
+    ofType(contactAction.ActionTypes.ADD_CONTACTS_REQUEST),
+    switchMap((action: any) => {
+      return this.http.addContacts(action.payload.contacts)
+        .pipe(
+          map((data) => {
+            return new contactAction.AddContactsSuccess({contacts: data});
+          }),
+          catchError(error =>
+            observableOf(new contactAction.AddContactsFailure({error}))
+          )
+        );
+    })
+  );
 }
 

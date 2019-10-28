@@ -18,4 +18,8 @@ export class UserService {
     return this.http.get(environment.serverUrl + environment.user, {headers: this.headers});
   }
 
+  getUsersWithFilter(filter) {
+    return this.http.get(environment.serverUrl + environment.user + `/filter/${filter}`, {headers: this.headers});
+  }
+
 }

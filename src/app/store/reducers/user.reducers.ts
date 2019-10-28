@@ -17,6 +17,20 @@ export function reducerUser(state: IUserState = initialUserState, action: userAc
         ...state,
         error: state.error
       };
+    case userAction.ActionTypes.GET_USERS_WITH_FILTER_REQUEST:
+      return {
+        ...state,
+      };
+    case userAction.ActionTypes.GET_USERS_WITH_FILTER_SUCCESS:
+      return {
+        ...state,
+        users: action.payload.users
+      };
+    case userAction.ActionTypes.GET_USERS_WITH_FILTER_FAILURE:
+      return {
+        ...state,
+        error: state.error
+      };
     default:
       return state;
   }

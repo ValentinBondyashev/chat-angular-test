@@ -24,8 +24,9 @@ import { MainPageModule } from '@module/main-page/main-page.module';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ContactEffect } from '@effect/contact.effects';
 import { UserEffect } from '@effect/user.effects';
-
-const config: SocketIoConfig = { url: 'http://localhost:5000', options: {}};
+import { ChatEffect } from '@effect/chat.effects';
+const token = localStorage.getItem('token');
+const config: SocketIoConfig = { url: `http://localhost:5000/?token=${token}`, options: {}};
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ const config: SocketIoConfig = { url: 'http://localhost:5000', options: {}};
     SocketIoModule.forRoot(config),
     MainPageModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([AuthEffect, ContactEffect, UserEffect]),
+    EffectsModule.forRoot([AuthEffect, ContactEffect, UserEffect, ChatEffect]),
     environment.production ? StoreDevtoolsModule.instrument() : [],
     ThemeModule.forRoot({
       themes: [lightTheme, darkTheme],

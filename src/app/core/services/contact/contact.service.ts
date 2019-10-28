@@ -17,4 +17,8 @@ export class ContactService {
   getAllContactsById() {
     return this.http.get(environment.serverUrl + environment.contact + '/all', {headers: this.headers});
   }
+
+  addContacts(contacts) {
+    return this.http.post(environment.serverUrl + environment.contact + '/add', contacts,{headers: this.headers});
+  }
 }

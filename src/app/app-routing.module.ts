@@ -10,15 +10,6 @@ const routes: Routes = [
     path: 'login',
     loadChildren: '@module/auth/auth.module#AuthModule'
   },
-  {
-    path: '404',
-    loadChildren: '@module/not-found/not-found.module#NotFoundModule'
-  },
-  {
-    path: '**',
-    redirectTo: '/404',
-    pathMatch: 'full'
-  },
 ];
 
 @NgModule({

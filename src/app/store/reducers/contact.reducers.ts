@@ -23,6 +23,19 @@ export function reducerContact(state: IContactState = initialContactState, actio
         gettingAllContacts: false,
         gottenAllContacts: false,
       };
+    case contactAction.ActionTypes.ADD_CONTACTS_REQUEST:
+      return {
+        ...state,
+      };
+    case contactAction.ActionTypes.ADD_CONTACTS_SUCCESS:
+      return {
+        ...state,
+      };
+    case contactAction.ActionTypes.ADD_CONTACTS_FAILURE:
+      return {
+        ...state,
+        error: state.error,
+      };
     default:
       return state;
   }

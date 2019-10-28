@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import * as jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-messages-block',
@@ -6,16 +7,26 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./messages-block.component.scss']
 })
 export class MessagesBlockComponent implements OnInit {
+  @ViewChild('scrollMe', {static: false}) private myScrollContainer: ElementRef;
   @Input() messages;
-  // messages = [{text: 'Hello', user: {first_name: 'Vlad', avatar: ''}, created_at: '3:05 PM'},
-  //
-  //   {text: 'Im okey. What about you?', user: {first_name: 'Vlad', avatar: ''}, created_at: '3:06 PM'},
-  //   {text: 'What are you doing?', user: {first_name: 'Vlad', avatar: ''}, created_at: '3:07 PM'}];
+  token;
+  userId;
 
   constructor() {
+    this.token = localStorage.getItem('token');
+    this.userId = jwt_decode(this.token).id;
   }
 
   ngOnInit() {
+    this.scrollToBottom();
   }
 
+  scrollToBottom(): void {
+    // try {
+    //   const element = this.myScrollContainer.nativeElement;
+    //   element.scrollIntoView(false);
+    // } catch (err) {
+    //   console.log(err);
+    // }
+  }
 }

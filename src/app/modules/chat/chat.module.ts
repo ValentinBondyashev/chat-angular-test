@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserInfoComponent } from './components/user-info/user-info.component';
+import { ChatInfoComponent } from './components/chat-info/chat-info.component';
 import { InputBlockComponent } from './components/input-block/input-block.component';
 import { MessagesBlockComponent } from './components/messages-block/messages-block.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,9 +11,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'chat',
     component: ChatComponent,
-  }
+  },
 ];
 
 @NgModule({
@@ -25,9 +25,9 @@ const routes: Routes = [
     ReactiveFormsModule,
   ],
   declarations: [
-    UserInfoComponent, InputBlockComponent, MessagesBlockComponent, ChatComponent
+    ChatInfoComponent, InputBlockComponent, MessagesBlockComponent, ChatComponent
   ],
-  exports: [UserInfoComponent, InputBlockComponent, MessagesBlockComponent, ChatComponent]
+  exports: [ChatInfoComponent, InputBlockComponent, MessagesBlockComponent, ChatComponent]
 })
 
 export class ChatModule { }

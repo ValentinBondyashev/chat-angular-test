@@ -1,17 +1,17 @@
 <div>
-  <form [formGroup]="newChatForm" (ngSubmit)="submit()">
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Favorite food"  formControlName="name">
+      <input matInput placeholder="Find people" formControlName="name" (ngModelChange)="handleInput($event)">
     </mat-form-field>
     <div class="example-section" formArrayName="subscribers">
       <div *ngFor="let user of users">
         <mat-checkbox class="example-margin"
-                      [value]="user.contact"
+                      [value]="user"
                       (change)="addItem($event)">
-          {{user.contact.firstName + ' ' + user.contact.lastName}}
+          {{user.firstName + ' ' + user.lastName}}
         </mat-checkbox>
       </div>
     </div>
-    <button mat-stroked-button>Add contact</button>
+    <button mat-stroked-button>Add new contacts</button>
   </form>
 </div>

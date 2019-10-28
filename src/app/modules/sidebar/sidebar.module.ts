@@ -11,15 +11,19 @@ import { ChatsComponent } from './components/chats/chats.component';
 import { CallsComponent } from './components/calls/calls.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
-import { CreateChatComponent } from './components/create-chat/create-chat.component';
+import { CreateBlockComponent } from './components/create-block/create-block.component';
 import { CreateChatModalComponent } from './components/create-chat-modal/create-chat-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { CreateContactModalComponent } from './components/create-contact-modal/create-contact-modal.component';
 
 
 @NgModule({
   declarations: [UserInfoComponent, SidebarComponent, AvatarComponent, SearchBarComponent, NavigationBarComponent,
-    ChatsComponent, CallsComponent, ContactsComponent, NotificationsComponent, CreateChatComponent, CreateChatModalComponent],
+    ChatsComponent, CallsComponent, ContactsComponent, NotificationsComponent, CreateBlockComponent, CreateChatModalComponent,
+    CreateContactModalComponent],
   imports: [
+    RouterModule,
     CommonModule,
     MaterialModule,
     TranslateModule,
@@ -29,7 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   exports: [
     SidebarComponent
   ],
-  entryComponents: [CreateChatModalComponent]
+  entryComponents: [CreateChatModalComponent, CreateContactModalComponent]
 })
 export class SidebarModule {
 }

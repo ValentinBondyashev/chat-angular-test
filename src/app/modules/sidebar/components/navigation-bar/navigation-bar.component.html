@@ -30,9 +30,21 @@
     </div>
   </div>
   <ng-container [ngSwitch]="navElement">
-    <app-chats *ngSwitchCase="'chats'"></app-chats>
-    <app-calls *ngSwitchCase="'calls'">Calls</app-calls>
-    <app-contacts *ngSwitchCase="'contacts'">Contacts</app-contacts>
-    <app-notifications *ngSwitchCase="'notifications'">Notifications</app-notifications>
+    <div *ngSwitchCase="'chats'">
+      <app-create-block [type]="'Chat'"></app-create-block>
+      <app-chats></app-chats>
+    </div>
+    <div *ngSwitchCase="'calls'">
+      <app-create-block></app-create-block>
+      <app-calls>Calls</app-calls>
+    </div>
+    <div *ngSwitchCase="'contacts'">
+      <app-create-block [type]="'Contact'"></app-create-block>
+      <app-contacts>Contacts</app-contacts>
+    </div>
+    <div *ngSwitchCase="'notifications'">
+      <app-create-block></app-create-block>
+      <app-notifications>Notifications</app-notifications>
+    </div>
   </ng-container>
 </section>

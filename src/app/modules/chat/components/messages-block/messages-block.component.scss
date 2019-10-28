@@ -33,25 +33,35 @@
   width: 100%;
   margin: 15px 0;
   display: flex;
+  &-own{
+    justify-content: flex-end;
+  }
 }
 
 .message-block{
-  width: 100%;
   margin: 10px 0 0 20px;
 }
 
 .message {
-  max-width: 80%;
-  min-height: 70px;
+  line-height: 20px;
+  word-break: break-word;
+  max-width: 600px;
+  min-height: 30px;
   display: flex;
   align-items: center;
   background: var(--first-background);
   border-radius: 20px 0 20px 20px;
-  padding: 0 20px;
+  padding: 10px 20px;
   font-size: 14px;
   color: var(--first-font-color);
+  &-own{
+    background: rgba(52, 177, 235, 0.2);
+  }
 }
 
+.message-wrap-own{
+  float: right;
+}
 
 .user-info {
   font-size: 13px;

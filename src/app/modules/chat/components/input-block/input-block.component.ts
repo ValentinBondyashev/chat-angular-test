@@ -9,16 +9,19 @@ import { ChatService } from '@service/chat/chat.service';
 export class InputBlockComponent implements OnInit {
   itemName;
   ifFocus = false;
+
   constructor(private chatService: ChatService) {
   }
 
   ngOnInit() {
   }
 
-  sendMessage() {
-    this.chatService.sendChat({text: this.itemName, user: {first_name: 'Vlad', avatar: ''}, created_at: '3:05 PM'});
+  sendMessage(message) {
+    const date = Date.now();
+    this.chatService.sendMessage({text: this.itemName, date});
     this.itemName = '';
   }
+
 
   onFocus() {
     this.ifFocus = false;
